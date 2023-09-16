@@ -9,7 +9,7 @@ body {
  animation-name: gradient;
  animation-duration: 15s;
  animation-timing-function: linear;
- animation-delay: 0;
+ animation-delay: 0s;
  animation-iteration-count: infinite;
  animation-direction: alternate;
 }
@@ -70,7 +70,7 @@ body {
 .nav li a {
  color: #CAC0B3;
  text-decoration: none;
- text-shadow: 0cqmax;
+ text-shadow: 2px 2px 4px #000000;
 }
 
 .nav li a:hover {
