@@ -1,0 +1,94 @@
+* {
+ box-sizing: border-box;
+}
+
+body {
+ background-color: #001233;
+ font-family: 'Comic Sans MS';
+}
+
+#header,
+#page-title {
+ text-align: center;
+ color: #CAC0B3;
+ font-size: 50px;
+ padding-top: 50px;
+ height: 100px;
+}
+
+.nav ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 10px;
+ background-color: blueviolet;
+ border: 5px solid gray;
+ font-size: 25px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.nav li.logo {
+ margin-right: auto;
+}
+
+.nav li {
+ margin-left: 20px;
+ text-align: center;
+}
+
+.nav li a {
+ color: #CAC0B3;
+ text-decoration: none;
+}
+
+.nav li a:hover {
+ text-decoration: underline;
+}
+
+
+.grid-container {
+ display: grid;
+ grid-template-areas:
+  'left middle middle middle middle right'
+  'footer footer footer footer footer footer';
+}
+
+.left,
+.middle,
+.right {
+ background-color: #ccc;
+ padding: 10px;
+ height: 390px;
+}
+
+.left {
+ grid-area: left;
+}
+
+.middle {
+ grid-area: middle;
+}
+
+.right {
+ grid-area: right;
+}
+
+.footer {
+ grid-area: footer;
+ padding: 10px;
+ text-align: center;
+ height: 20px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+ .grid-container {
+  grid-template-areas:
+   'header header header header header header'
+   'left left left left left left'
+   'middle middle middle middle middle middle'
+   'right right right right right right'
+   'footer footer footer footer footer footer';
+ }
+}
