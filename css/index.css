@@ -5,8 +5,13 @@
 body {
  font-family: 'Comic Sans MS';
  background-image: radial-gradient(red, blue, green);
- background-size: 200% 200%;
- animation: gradient 7s ease infinite;
+ background-size: 1000% 4000%;
+ animation-name: gradient;
+ animation-duration: 15s;
+ animation-timing-function: linear;
+ animation-delay: 0;
+ animation-iteration-count: infinite;
+ animation-direction: alternate;
 }
 
 @keyframes gradient {
@@ -32,12 +37,21 @@ body {
  height: 100px;
 }
 
+.nav {
+ position: sticky;
+}
+
 .nav ul {
  list-style-type: none;
  margin: 0;
- padding: 10px;
+ padding-right: 10px;
+ padding-left: 10px;
+ padding-bottom: 10px;
+ padding-top: 10px;
  background-color: blueviolet;
- border: 5px solid gray;
+ border-width: 5px;
+ border-style: solid;
+ border-color: gray;
  font-size: 25px;
  display: flex;
  justify-content: center;
@@ -56,12 +70,17 @@ body {
 .nav li a {
  color: #CAC0B3;
  text-decoration: none;
+ text-shadow: 0cqmax;
 }
 
 .nav li a:hover {
  text-decoration: underline;
 }
 
+.grid-container ul {
+ overflow: auto;
+ display: inline;
+}
 
 .grid-container {
  display: grid;
@@ -80,17 +99,41 @@ body {
 .left {
  grid-area: left;
  border: 1px solid #ccc;
+ border-radius: 10px;
  overflow: auto;
  text-align: left;
+ text-decoration: none;
+ opacity: 0.8;
 }
 
 .middle {
  grid-area: middle;
  border: 1px solid #ccc;
+ border-radius: 10px;
+ font-size: large;
+ font-weight: 200;
+ text-decoration: none;
+}
+
+.grid-container:hover .left {
+ background-color: red;
+}
+
+.grid-container:hover .middle {
+ background-color: white;
+}
+
+.grid-container:hover .right {
+ background-color: red;
 }
 
 .right {
  grid-area: right;
+ text-align: left;
+ overflow: auto;
+ border: 1px solid #ccc;
+ border-radius: 10px;
+ text-decoration: none;
 }
 
 .footer {
@@ -106,67 +149,15 @@ body {
  overflow-y: scroll;
 }
 
-#gradient {
- height: 300px;
- width: 300px;
- border: 1px solid black;
- font-size: 30px;
- background: linear-gradient(130deg, #ff7e00, #ffffff, #5cff00);
- background-size: 200% 200%;
 
- -webkit-animation: Animation 5s ease infinite;
- -moz-animation: Animation 5s ease infinite;
- animation: Animation 5s ease infinite;
-}
-
-@-webkit-keyframes Animation {
- 0% {
-  background-position: 10% 0%
- }
-
- 50% {
-  background-position: 91% 100%
- }
-
- 100% {
-  background-position: 10% 0%
- }
-}
-
-@-moz-keyframes Animation {
- 0% {
-  background-position: 10% 0%
- }
-
- 50% {
-  background-position: 91% 100%
- }
-
- 100% {
-  background-position: 10% 0%
- }
-}
-
-@keyframes Animation {
- 0% {
-  background-position: 10% 0%
- }
-
- 50% {
-  background-position: 91% 100%
- }
-
- 100% {
-  background-position: 10% 0%
- }
-}
-
-@media (max-width: 600px) {
+@media screen and (max-width: 800px) {
  .grid-container {
   grid-template-areas:
    'left left left left left left'
    'middle middle middle middle middle middle'
    'right right right right right right'
    'footer footer footer footer footer footer';
+  flex-direction: column;
+  align-items: center;
  }
 }
