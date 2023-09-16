@@ -3,8 +3,24 @@
 }
 
 body {
- background-color: #001233;
  font-family: 'Comic Sans MS';
+ background-image: radial-gradient(red, blue, green);
+ background-size: 200% 200%;
+ animation: gradient 7s ease infinite;
+}
+
+@keyframes gradient {
+ 0% {
+  background-position: 0% 50%;
+ }
+
+ 50% {
+  background-position: 100% 50%;
+ }
+
+ 100% {
+  background-position: 0% 50%;
+ }
 }
 
 #header,
@@ -57,7 +73,6 @@ body {
 .left,
 .middle,
 .right {
- background-color: #ccc;
  padding: 10px;
  height: 390px;
 }
@@ -66,10 +81,12 @@ body {
  grid-area: left;
  border: 1px solid #ccc;
  overflow: auto;
+ text-align: left;
 }
 
 .middle {
  grid-area: middle;
+ border: 1px solid #ccc;
 }
 
 .right {
@@ -84,12 +101,69 @@ body {
  color: #CAC0B3;
 }
 
+.deep {
+ padding: 20px;
+ overflow-y: scroll;
+}
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+#gradient {
+ height: 300px;
+ width: 300px;
+ border: 1px solid black;
+ font-size: 30px;
+ background: linear-gradient(130deg, #ff7e00, #ffffff, #5cff00);
+ background-size: 200% 200%;
+
+ -webkit-animation: Animation 5s ease infinite;
+ -moz-animation: Animation 5s ease infinite;
+ animation: Animation 5s ease infinite;
+}
+
+@-webkit-keyframes Animation {
+ 0% {
+  background-position: 10% 0%
+ }
+
+ 50% {
+  background-position: 91% 100%
+ }
+
+ 100% {
+  background-position: 10% 0%
+ }
+}
+
+@-moz-keyframes Animation {
+ 0% {
+  background-position: 10% 0%
+ }
+
+ 50% {
+  background-position: 91% 100%
+ }
+
+ 100% {
+  background-position: 10% 0%
+ }
+}
+
+@keyframes Animation {
+ 0% {
+  background-position: 10% 0%
+ }
+
+ 50% {
+  background-position: 91% 100%
+ }
+
+ 100% {
+  background-position: 10% 0%
+ }
+}
+
 @media (max-width: 600px) {
  .grid-container {
   grid-template-areas:
-   'header header header header header header'
    'left left left left left left'
    'middle middle middle middle middle middle'
    'right right right right right right'
